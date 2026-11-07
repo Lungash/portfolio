@@ -16,5 +16,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /downloads/*
   Cache-Control: public, max-age=31536000, immutable
-/assets/*
+/assets/*.png
+  Cache-Control: public, max-age=86400
+/assets/*.svg
+  Cache-Control: public, max-age=86400
+/assets/*.ico
   Cache-Control: public, max-age=86400

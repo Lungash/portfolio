@@ -214,7 +214,11 @@ urls = ["/", "/tools/"] + [f'/tools/{t["slug"]}/' for t in tools if not t.get("p
   Cache-Control: public, max-age=31536000, immutable
 /downloads/*
   Cache-Control: public, max-age=31536000, immutable
-/assets/*
+/assets/*.png
+  Cache-Control: public, max-age=86400
+/assets/*.svg
+  Cache-Control: public, max-age=86400
+/assets/*.ico
   Cache-Control: public, max-age=86400
 """)
 print(f"built {len(tools)} tools ({'with' if MOCK else 'no'} placeholders); css {css_h} js {js_h}")
