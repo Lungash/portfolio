@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WhatsApp Vault — Lungash</title>
+<meta name="description" content="An Android app that keeps a local copy of my own WhatsApp messages and media, including the ones a sender deletes after I&#x27;ve seen them.">
+<meta name="theme-color" content="#f2eee5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="WhatsApp Vault — Lungash">
+<meta property="og:description" content="An Android app that keeps a local copy of my own WhatsApp messages and media, including the ones a sender deletes after I&#x27;ve seen them.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lungash.luntech.work/tools/whatsapp-vault/">
+<link rel="canonical" href="https://lungash.luntech.work/tools/whatsapp-vault/">
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<link rel="stylesheet" href="/style.11da8caa.css">
+</head>
+<body class="tool-page">
+<a class="skip" href="#main">Skip to content</a>
+<div class="sheet">
+<header>
+  <div class="titleblock">
+    <a href="/">&larr; Lungash</a>
+    <a href="/tools/">All tools</a>
+    <span>Kotlin · Android · Room</span>
+  </div>
+  <h1 class="tool">WhatsApp Vault</h1>
+  <div class="tool-head"><span class="badge st-released">released</span><span> &middot; v0.1</span></div>
+  <p class="lede">An Android app that keeps a local copy of my own WhatsApp messages and media, including the ones a sender deletes after I&#x27;ve seen them.</p>
+</header>
+<main id="main">
+<div class="body">
+<p>It&rsquo;s a backup of your own account on your own phone. It isn&rsquo;t a way to watch anyone else&rsquo;s, and it can&rsquo;t be: it only sees what your phone already shows you.</p>
+
+      <figure>
+        <svg viewBox="0 0 520 200" role="img" aria-labelledby="f2t">
+          <title id="f2t">Notifications are diffed against saved messages into a local database. New media files are copied into private storage and matched to messages within 45 seconds. The app declares no internet permission.</title>
+          <defs><marker id="a2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8z" fill="currentColor"/></marker></defs>
+          <g color="currentColor">
+            <rect class="ln" x="8" y="16" width="140" height="44" rx="3"/><text x="78" y="43" font-size="11" text-anchor="middle">notification</text>
+            <line class="ln" x1="150" y1="38" x2="186" y2="38" marker-end="url(#a2)"/>
+            <rect class="ln" x="190" y="16" width="120" height="44" rx="3"/><text x="250" y="43" font-size="11" text-anchor="middle">diff vs saved</text>
+            <line class="ln" x1="312" y1="38" x2="348" y2="38" marker-end="url(#a2)"/>
+            <rect class="ln" x="352" y="16" width="152" height="44" rx="3"/><text x="428" y="43" font-size="11" text-anchor="middle">vault.db (Room)</text>
+            <rect class="ln" x="8" y="96" width="140" height="44" rx="3"/><text x="78" y="123" font-size="11" text-anchor="middle">media folder</text>
+            <line class="ln" x1="150" y1="118" x2="186" y2="118" marker-end="url(#a2)"/>
+            <rect class="ln" x="190" y="96" width="120" height="44" rx="3"/><text x="250" y="123" font-size="11" text-anchor="middle">FileObserver</text>
+            <line class="ln" x1="312" y1="118" x2="348" y2="118" marker-end="url(#a2)"/>
+            <rect class="ln" x="352" y="96" width="152" height="44" rx="3"/><text x="428" y="123" font-size="11" text-anchor="middle">private storage</text>
+            <line class="ln" x1="428" y1="94" x2="428" y2="62" marker-end="url(#a2)"/>
+            <text x="436" y="82" font-size="10" class="m">match &le; 45 s</text>
+            <rect class="dash" x="8" y="160" width="496" height="30" rx="3"/>
+            <text x="256" y="180" font-size="11" text-anchor="middle" class="hot">&times; INTERNET permission: not declared</text>
+          </g>
+        </svg>
+        <figcaption>Nothing in the manifest lets it talk to a network.</figcaption>
+      </figure>
+
+      <dl class="spec">
+        <div><dt>Messages</dt><dd>A <code>NotificationListenerService</code> reads WhatsApp&rsquo;s own notifications. WhatsApp keeps one notification per chat and rewrites it in place, so each update is diffed against what&rsquo;s already saved to catch the new lines without duplicating old ones.</dd></div>
+        <div><dt>Deletions</dt><dd>When a sender deletes a message, WhatsApp reposts the notification with &ldquo;This message was deleted.&rdquo; The app spots that and flags its saved copy as deleted, keeping the original text.</dd></div>
+        <div><dt>Media</dt><dd>A foreground service watches WhatsApp&rsquo;s media folders with a <code>FileObserver</code> and copies new images, video, voice notes, documents and stickers into the app&rsquo;s private storage as soon as they land. Linking a file to its message is a timestamp heuristic, and the README says so.</dd></div>
+        <div><dt>Storage</dt><dd>One Room database and one private media folder. No server, no telemetry.</dd></div>
+      </dl>
+
+      <h2 class="label">Things it doesn&rsquo;t do</h2>
+      <ul class="not">
+        <li>View-once media. WhatsApp never writes it to the folder the app watches.</li>
+        <li>Anything WhatsApp didn&rsquo;t auto-download to the phone.</li>
+        <li>Disappearing-message chats, reliably. Expect gaps.</li>
+        <li>Deletion notices in other languages. The phrases are English only so far.</li>
+        <li>Automated tests. Not yet, and the notification diffing is the part that needs them.</li>
+      </ul>
+<div class="get">
+  <a class="btn" href="/downloads/whatsapp-vault-0.1.apk" download>Download the APK &middot; v0.1 &middot; 4.8 MiB</a>
+  <p>Needs Android 8.0 or newer. It isn&#x27;t on the Play Store, so your browser will ask you to allow installing apps from it. After installing you grant two things by hand: notification access, and &quot;all files access&quot;.</p>
+  <p>Signed with my own key. If you installed an older debug build, uninstall it first, because Android won&#x27;t update across different signing keys. Built for my own phone, so treat v0.1 accordingly.</p>
+  <p class="hash">SHA-256 6084eedc99bd7a7f9082fd91c49b5ef7f36e33303457e1fb5b2f6123914365b9</p>
+</div>
+<p class="links"><span>Source is private for now.</span></p>
+</div>
+<ul class="tag-links" aria-label="Tags"><li><a href="/tools/?tag=android">#android</a></li><li><a href="/tools/?tag=kotlin">#kotlin</a></li><li><a href="/tools/?tag=privacy">#privacy</a></li></ul>
+</main>
+<footer>
+  <span>&copy; 2026 Lungash</span>
+</footer>
+</div>
+</body>
+</html>

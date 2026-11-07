@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lushare — Lungash</title>
+<meta name="description" content="Move text and files between your own devices with a link or a QR code. No accounts.">
+<meta name="theme-color" content="#f2eee5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="lushare — Lungash">
+<meta property="og:description" content="Move text and files between your own devices with a link or a QR code. No accounts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lungash.luntech.work/tools/lushare/">
+<link rel="canonical" href="https://lungash.luntech.work/tools/lushare/">
+
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<link rel="stylesheet" href="/style.11da8caa.css">
+</head>
+<body class="tool-page">
+<a class="skip" href="#main">Skip to content</a>
+<div class="sheet">
+<header>
+  <div class="titleblock">
+    <a href="/">&larr; Lungash</a>
+    <a href="/tools/">All tools</a>
+    <span>Rust · axum · SQLite</span>
+  </div>
+  <h1 class="tool">lushare</h1>
+  <div class="tool-head"><span class="badge st-released">released</span><span></span></div>
+  <p class="lede">Move text and files between your own devices with a link or a QR code. No accounts.</p>
+</header>
+<main id="main">
+<div class="body">
+<p>Paste something on your phone, open the link on your laptop. That&rsquo;s the whole idea. A drop is controlled by the device that started it, so there&rsquo;s nothing to sign up for.</p>
+
+      <figure>
+        <svg viewBox="0 0 520 215" role="img" aria-labelledby="f1t">
+          <title id="f1t">A phone uploads to a Rust and SQLite server, which serves a link to a laptop. In private mode the key travels only in the link fragment.</title>
+          <defs><marker id="a1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8z" fill="currentColor"/></marker></defs>
+          <g color="currentColor">
+            <rect class="ln" x="14" y="30" width="64" height="100" rx="9"/>
+            <text x="46" y="84" font-size="11" text-anchor="middle">paste</text>
+            <text x="46" y="148" font-size="11" text-anchor="middle" class="m">phone</text>
+            <line class="ln" x1="80" y1="80" x2="186" y2="80" marker-end="url(#a1)"/>
+            <text x="133" y="70" font-size="10" text-anchor="middle" class="m">upload</text>
+            <rect class="ln" x="190" y="48" width="140" height="64" rx="3"/>
+            <text x="260" y="76" font-size="12" text-anchor="middle">Rust + SQLite</text>
+            <text x="260" y="94" font-size="10" text-anchor="middle" class="m">24h, then dead</text>
+            <line class="ln" x1="332" y1="80" x2="438" y2="80" marker-end="url(#a1)"/>
+            <text x="385" y="70" font-size="10" text-anchor="middle" class="m">link / QR</text>
+            <rect class="ln" x="442" y="40" width="68" height="84" rx="3"/>
+            <text x="476" y="86" font-size="11" text-anchor="middle">open</text>
+            <text x="476" y="148" font-size="11" text-anchor="middle" class="m">laptop</text>
+            <path class="dash" d="M46 156 C 46 200, 476 200, 476 154"/>
+            <text x="260" y="208" font-size="10" text-anchor="middle" class="hot">private mode: the key rides in the #fragment</text>
+          </g>
+        </svg>
+        <figcaption>The server never receives the part of the link after the #.</figcaption>
+      </figure>
+
+      <dl class="spec">
+        <div><dt>Server</dt><dd>One Rust binary (axum) with SQLite and files on disk. The pages are plain HTML and JavaScript, compiled into the binary. No build step.</dd></div>
+        <div><dt>Private mode</dt><dd>Optional. Content is encrypted in the browser with AES-256-GCM before it&rsquo;s uploaded, so the server stores ciphertext. The key travels in the link&rsquo;s <code>#fragment</code>, which browsers never send to a server.</dd></div>
+        <div><dt>Links</dt><dd>128 random bits each, dead after 24 hours, or sooner with one button. Optional password (PBKDF2-HMAC-SHA256, 600,000 rounds). Optional burn-after-reading.</dd></div>
+        <div><dt>More devices</dt><dd>Get a six-character code or QR, enter it on the other device, and tap Allow on the first one. Until then the newcomer sees nothing.</dd></div>
+        <div><dt>Big files</dt><dd>Sent in 4&nbsp;MiB chunks and resumed after a dropped connection, even after a page reload. Up to 100&nbsp;MB per drop, downloadable as one zip.</dd></div>
+        <div><dt>Abuse</dt><dd>Turnstile, per-IP and per-device limits, a daily quota and a global disk cap. With no accounts there&rsquo;s nobody to ban, so the limits have to do the work.</dd></div>
+      </dl>
+<p class="links"><a href="https://lushare.luntech.work/">lushare.luntech.work</a> <span>&middot;</span> <span>Source is private for now.</span></p>
+</div>
+<ul class="tag-links" aria-label="Tags"><li><a href="/tools/?tag=rust">#rust</a></li><li><a href="/tools/?tag=networking">#networking</a></li><li><a href="/tools/?tag=crypto">#crypto</a></li><li><a href="/tools/?tag=web">#web</a></li></ul>
+</main>
+<footer>
+  <span>&copy; 2026 Lungash</span>
+</footer>
+</div>
+</body>
+</html>

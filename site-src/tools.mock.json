@@ -1,0 +1,274 @@
+{
+  "tools": [
+    {
+      "slug": "placeholder-01",
+      "name": "Placeholder 01",
+      "tagline": "Sample tagline so you can judge line length.",
+      "status": "released",
+      "tags": [
+        "rust",
+        "networking"
+      ],
+      "featured": true,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "released"
+        },
+        {
+          "k": "Tags",
+          "v": "rust, networking"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-02",
+      "name": "Placeholder 02",
+      "tagline": "A somewhat longer sample tagline that wraps onto a second line to show how cards cope with more text.",
+      "status": "in-progress",
+      "tags": [
+        "crypto",
+        "blockchain"
+      ],
+      "featured": true,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "in-progress"
+        },
+        {
+          "k": "Tags",
+          "v": "crypto, blockchain"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-03",
+      "name": "Placeholder 03",
+      "tagline": "Short one.",
+      "status": "private",
+      "tags": [
+        "rust",
+        "mining"
+      ],
+      "featured": false,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "private"
+        },
+        {
+          "k": "Tags",
+          "v": "rust, mining"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-04",
+      "name": "Placeholder 04 \u00b7 a longer name",
+      "tagline": "Sample tagline about a thing that does a thing.",
+      "status": "released",
+      "tags": [
+        "android",
+        "kotlin"
+      ],
+      "featured": false,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "released"
+        },
+        {
+          "k": "Tags",
+          "v": "android, kotlin"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-05",
+      "name": "Placeholder 05",
+      "tagline": "Another placeholder entry for layout testing.",
+      "status": "in-progress",
+      "tags": [
+        "networking",
+        "web"
+      ],
+      "featured": false,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "in-progress"
+        },
+        {
+          "k": "Tags",
+          "v": "networking, web"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-06",
+      "name": "Placeholder 06",
+      "tagline": "Sample entry with a medium-length description of purpose.",
+      "status": "released",
+      "tags": [
+        "crypto",
+        "rust"
+      ],
+      "featured": false,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "released"
+        },
+        {
+          "k": "Tags",
+          "v": "crypto, rust"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-07",
+      "name": "Placeholder 07",
+      "tagline": "Placeholder.",
+      "status": "private",
+      "tags": [
+        "blockchain",
+        "web"
+      ],
+      "featured": false,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "private"
+        },
+        {
+          "k": "Tags",
+          "v": "blockchain, web"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-08",
+      "name": "Placeholder 08 \u00b7 a longer name",
+      "tagline": "Sample tagline: packets, bytes, and the spaces between them.",
+      "status": "in-progress",
+      "tags": [
+        "mining",
+        "networking"
+      ],
+      "featured": false,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "in-progress"
+        },
+        {
+          "k": "Tags",
+          "v": "mining, networking"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-09",
+      "name": "Placeholder 09",
+      "tagline": "A placeholder for a tool that is still on the bench.",
+      "status": "released",
+      "tags": [
+        "rust",
+        "web"
+      ],
+      "featured": false,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "released"
+        },
+        {
+          "k": "Tags",
+          "v": "rust, web"
+        }
+      ]
+    },
+    {
+      "slug": "placeholder-10",
+      "name": "Placeholder 10",
+      "tagline": "Sample entry, private for now.",
+      "status": "private",
+      "tags": [
+        "android",
+        "privacy"
+      ],
+      "featured": false,
+      "stack": "Sample \u00b7 Stack",
+      "placeholder": true,
+      "description": [
+        "This is a placeholder entry used only to preview how the tools section scales. It is not a real tool.",
+        "Adding a real tool is one entry in tools.json plus a run of the build script."
+      ],
+      "specs": [
+        {
+          "k": "Status",
+          "v": "private"
+        },
+        {
+          "k": "Tags",
+          "v": "android, privacy"
+        }
+      ]
+    }
+  ]
+}

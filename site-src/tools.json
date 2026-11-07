@@ -1,0 +1,37 @@
+{
+  "_help": "One object per tool. Add an entry, run `python3 site-src/build.py`, commit. Fields: slug, name, tagline, status (released | in-progress | private), tags[], featured (home page shows the first 4 featured), stack, version, links[{label,url}], note, download{file,label,notes[]}, body (a fragment in site-src/content/) or description[] + specs[{k,v}].",
+  "tools": [
+    {
+      "slug": "lushare",
+      "name": "lushare",
+      "tagline": "Move text and files between your own devices with a link or a QR code. No accounts.",
+      "status": "released",
+      "tags": ["rust", "networking", "crypto", "web"],
+      "featured": true,
+      "stack": "Rust · axum · SQLite",
+      "links": [{ "label": "lushare.luntech.work", "url": "https://lushare.luntech.work/" }],
+      "note": "Source is private for now.",
+      "body": "content/lushare.html"
+    },
+    {
+      "slug": "whatsapp-vault",
+      "name": "WhatsApp Vault",
+      "tagline": "An Android app that keeps a local copy of my own WhatsApp messages and media, including the ones a sender deletes after I've seen them.",
+      "status": "released",
+      "tags": ["android", "kotlin", "privacy"],
+      "featured": true,
+      "stack": "Kotlin · Android · Room",
+      "version": "v0.1",
+      "note": "Source is private for now.",
+      "body": "content/whatsapp-vault.html",
+      "download": {
+        "file": "downloads/whatsapp-vault-0.1.apk",
+        "label": "Download the APK",
+        "notes": [
+          "Needs Android 8.0 or newer. It isn't on the Play Store, so your browser will ask you to allow installing apps from it. After installing you grant two things by hand: notification access, and \"all files access\".",
+          "Signed with my own key. If you installed an older debug build, uninstall it first, because Android won't update across different signing keys. Built for my own phone, so treat v0.1 accordingly."
+        ]
+      }
+    }
+  ]
+}
